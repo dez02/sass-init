@@ -1,3 +1,4 @@
+/* MIXINS -----------------------------------------------*/
 /* BASE ------------------------------------------------- */
 * {
   box-sizing: border-box; }
@@ -19,6 +20,11 @@ ul {
   padding: 0;
   margin: 0; }
 
+p {
+  margin-bottom: 1.25em; }
+  .intro p {
+    font-size: 1.2em; }
+
 a {
   color: #278da4;
   text-decoration: none; }
@@ -29,7 +35,9 @@ a {
 header {
   height: 460px;
   background: linear-gradient(#3acec2, #009fe1), url("../img/bg.jpg") no-repeat;
-  background-size: cover; }
+  background-blend-mode: multiply;
+  background-size: cover;
+  position: relative; }
   header h1 {
     color: #fff;
     font-size: 4.8em;
@@ -53,8 +61,9 @@ footer {
   padding: 2em 0 0;
   height: 100px;
   background-color: #eee;
-  margin-top: 3.5em; }
-  footer::before {
+  margin-top: 3.5em;
+  position: relative; }
+  footer::after {
     content: '';
     display: block;
     width: 100%;
@@ -98,6 +107,22 @@ footer {
   .card h1 {
     color: #278da4; }
 
+.btn {
+  color: #fff;
+  display: inline-block;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 0.75em 1.5em;
+  border-radius: 0.35em;
+  margin-top: auto; }
+  .btn-callout {
+    font-size: 1.1em;
+    background-color: #b13c69; }
+  .btn-info {
+    font-size: 0.85em;
+    background-color: #278da4; }
+
 /* MEDIA QUERIES ------------------------------------------------- */
 @media (max-width: 575px) {
   header {
@@ -118,7 +143,9 @@ footer {
 @media (min-width: 768px) {
   .main-content {
     width: 90%;
-    max-width: 1000px; } }
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto; } }
 @media (min-width: 992px) {
   header {
     background-position: 0 0, 0 45%; }
